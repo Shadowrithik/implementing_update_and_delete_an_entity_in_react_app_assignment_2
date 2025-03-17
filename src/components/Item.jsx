@@ -1,8 +1,12 @@
-const Item = ({ item }) => {
+import ItemList from "../components/ItemList";
 
-    // Render a single item
-    // Add a Delete and Edit button
-    return null;
-};
+function App() {
+    return (
+        <div>
+            <h1>Item List</h1>
+            <ItemList apiUrl={import.meta.env.VITE_API_URI} />
+        </div>
+    );
+}
 
-export default Item;
+export default App;

@@ -1,15 +1,16 @@
-import ItemList from "./components/ItemList";
-
-// use the following link to get the data
-// `/doors` will give you all the doors.
-const API_URI = `https://${import.meta.env.VITE_API_URI}/doors`;
+import ItemList from "../src/components/ItemList";
 
 function App() {
-  // Get the existing item from the server
-  // const [items, setItems] = useState(null);
-  // pass the item to UpdateItem as a prop
+    const apiUrl = import.meta.env.VITE_API_URI; // ✅ Load API URL from .env
 
-  return <ItemList />;
+    console.log("API URL:", apiUrl); // Debugging: Check if API URL is loaded
+
+    return (
+        <div>
+            <h1>Item List</h1>
+            <ItemList apiUrl={apiUrl} />
+        </div>
+    );
 }
 
 export default App;
